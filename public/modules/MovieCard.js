@@ -1,5 +1,5 @@
 import Component from "./Component.js";
-import MoviePoster from "./MoviePoster.js";
+
 import series from "../data/series.js";
 
 class MovieCard extends Component {
