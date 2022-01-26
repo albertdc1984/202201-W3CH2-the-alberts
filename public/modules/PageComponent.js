@@ -1,7 +1,10 @@
 import series from "../data/series.js";
 import Component from "./Component.js";
+import MovieCard from "./MovieCard.js";
 
 export default class PageComponent extends Component {
+  series;
+
   constructor() {
     const parentElement = document.querySelector(".container");
     const className = "main";
@@ -9,6 +12,7 @@ export default class PageComponent extends Component {
     super(parentElement, tag, className);
     this.series = series;
     this.generateBaseHTML();
+    this.renderSeries();
   }
 
   generateBaseHTML() {
@@ -27,24 +31,29 @@ export default class PageComponent extends Component {
             <p class="info">You have watched 4 series</p>
             <!--<p class="info">You already have not watched any serie</p>-->
             <ul class="series-list series-list--watched">
-              <li class="serie">
+             
                 
-                
-              </li>
             </ul>
           </section>
         </section>`;
   }
 
   renderSeries() {
-    const wached = this.element.querySelector("series-watched");
-    const pending = this.element.querySelector("series-pending");
+    const wached = document.querySelector(".series-watched .series-list");
+    const pending = document.querySelector(".series-pending .series-list");
+
     this.series.forEach((serie) => {
       if (serie.watched) {
-        wached.append(/* generateserie(serie) */);
+        new MovieCard(wached, serie);
       } else {
-        pending.append(/* generateserie(serie) */);
+        new MovieCard(pending, serie);
       }
     });
+  }
+
+  removeCard(serieToDelete) {
+    this.series = this.series.filter((serie) => serie !== serieToDelete);
+    this.generateBaseHTML();
+    this.renderSeries();
   }
 }
