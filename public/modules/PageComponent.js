@@ -20,16 +20,16 @@ export default class PageComponent extends Component {
           <h2 class="section-title">Series list</h2>
           <section class="series-pending">
             <h3 class="subsection-title">Pending series</h3>
-            <p class="info">You have 4 series pending to watch</p>
-            <!--<p class="info">Congrats! You've watched all your series</p>-->
+            <p class="info">You have ${this.calculatePending()} series pending to watch</p>
+            ${this.allSeries()}
             <ul class="series-list">
              
             </ul>
           </section>
           <section class="series-watched">
             <h3 class="subsection-title">Watched series</h3>
-            <p class="info">You have watched 4 series</p>
-            <!--<p class="info">You already have not watched any serie</p>-->
+            <p class="info">You have watched ${this.calculateWatched()} series</p>
+            ${this.anySerie()}
             <ul class="series-list series-list--watched">
              
                 
@@ -55,5 +55,29 @@ export default class PageComponent extends Component {
     this.series = this.series.filter((serie) => serie !== serieToDelete);
     this.generateBaseHTML();
     this.renderSeries();
+  }
+
+  calculateWatched() {
+    const numberWatched = this.series.filter((serie) => serie.watched).length;
+
+    return numberWatched;
+  }
+
+  calculatePending() {
+    return this.series.length - this.calculateWatched();
+  }
+
+  allSeries() {
+    if (!this.calculatePending()) {
+      return `<p class="info">Congrats! You've watched all your series</p>`;
+    }
+    return "";
+  }
+
+  anySerie() {
+    if (!this.calculateWatched()) {
+      return `<p class="info"> You already have not watched any serie </p>`;
+    }
+    return "";
   }
 }
