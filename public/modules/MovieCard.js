@@ -3,24 +3,20 @@ import Component from "./Component.js";
 import series from "../data/series.js";
 
 class MovieCard extends Component {
-
   movies = series;
 
   movie;
 
   constructor(parentElement, seriesId) {
-
     super(parentElement, "li", "serie");
 
-
-    this.generateHTML();
-
     this.seriesId = seriesId;
-    this.movie = this.movies.filter(() => this.movies.id === this.seriesId);
+    this.movie = this.movies.filter((movie) => movie.id === this.seriesId);
+    this.generateHTML();
   }
 
   generateHTML() {
-     this.element.innerHTML = `
+    this.element.innerHTML = `
       
                 <img
                   class="serie__poster"
