@@ -1,8 +1,14 @@
 import MovieCard from "./modules/MovieCard.js";
 
-const cardParent = document.querySelector(".series-list");
+const cardPending = document.querySelector(".series-list");
+const cardWatched = document.querySelector(".series-list--watched");
 
-const sopranos = new MovieCard(cardParent);
-const gameOfThrones = new MovieCard(cardParent);
-const madMen = new MovieCard(cardParent);
-const sixFeetUnder = new MovieCard(cardParent);
+const sopranosPending = new MovieCard(cardPending);
+const gameOfThronesPending = new MovieCard(cardPending);
+const madMenPending = new MovieCard(cardPending);
+const sixFeetUnderPending = new MovieCard(cardPending);
+
+const sopranosWatched = new MovieCard(cardWatched);
+const gameOfThronesWatched = new MovieCard(cardWatched);
+const madMenWatched = new MovieCard(cardWatched);
+const sixFeetUnderWatched = new MovieCard(cardWatched);
