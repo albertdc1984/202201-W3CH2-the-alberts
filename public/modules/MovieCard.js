@@ -3,13 +3,15 @@ import MoviePoster from "./MoviePoster.js";
 import series from "../data/series.js";
 
 class MovieCard extends Component {
+
   movies = series;
 
   movie;
 
   constructor(parentElement, seriesId) {
-    debugger;
+
     super(parentElement, "li", "serie");
+
 
     this.generateHTML();
 
@@ -18,7 +20,7 @@ class MovieCard extends Component {
   }
 
   generateHTML() {
-    this.element.innerHTML = `
+     this.element.innerHTML = `
       
                 <img
                   class="serie__poster"
