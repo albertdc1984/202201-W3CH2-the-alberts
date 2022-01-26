@@ -1,0 +1,29 @@
+{
+  "name": "202201-w3ch2-albert-dominguez",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albertdc1984/202201-W3CH2-the-alberts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/albertdc1984/202201-W3CH2-the-alberts/issues"
+  },
+  "homepage": "https://github.com/albertdc1984/202201-W3CH2-the-alberts#readme",
+  "devDependencies": {
+    "@types/jest": "^27.4.0",
+    "eslint": "^8.7.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "husky": "^7.0.4",
+    "jest": "^27.4.7"
+  }
+}
