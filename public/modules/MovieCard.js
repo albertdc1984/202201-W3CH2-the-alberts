@@ -1,9 +1,20 @@
 import Component from "./Component.js";
+import MoviePoster from "./MoviePoster.js";
+import series from "../data/series.js";
 
 class MovieCard extends Component {
-  constructor(parentElement) {
+  movies = series;
+
+  movie;
+
+  constructor(parentElement, seriesId) {
+    debugger;
     super(parentElement, "li", "serie");
+
     this.generateHTML();
+
+    this.seriesId = seriesId;
+    this.movie = this.movies.filter(() => this.movies.id === this.seriesId);
   }
 
   generateHTML() {
@@ -11,11 +22,11 @@ class MovieCard extends Component {
       
                 <img
                   class="serie__poster"
-                  src="https://m.media-amazon.com/images/M/MV5BZGJjYzhjYTYtMDBjYy00OWU1LTg5OTYtNmYwOTZmZjE3ZDdhXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg"
-                  alt="The Sopranos poster"
+                  src=${this.movie.poster}
+                  alt="${this.movie.name} poster"
                   />
-                <h4 class="serie__title">The Sopranos</h4>
-                <p class="serie__info">David Chase (1999)</p>
+                <h4 class="serie__title">${this.movie.name}</h4>
+                <p class="serie__info">${this.movie.creator} (${this.movie.year})</p>
                 <ul class="score">
                   <li class="score__star">
                     <i class="icon--score fas fa-star" title="1/5"></i>
