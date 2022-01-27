@@ -1,6 +1,6 @@
 import series from "../data/series.js";
 import Component from "./Component.js";
-import MovieCard from "./MovieCard.js";
+import SerieCard from "./SerieCard.js";
 
 export default class PageComponent extends Component {
   series;
@@ -44,9 +44,9 @@ export default class PageComponent extends Component {
 
     this.series.forEach((serie) => {
       if (serie.watched) {
-        new MovieCard(wached, serie);
+        new SerieCard(wached, serie);
       } else {
-        new MovieCard(pending, serie);
+        new SerieCard(pending, serie);
       }
     });
   }

@@ -6,8 +6,8 @@ const series = [
     year: 1999,
     poster:
       "https://m.media-amazon.com/images/M/MV5BZGJjYzhjYTYtMDBjYy00OWU1LTg5OTYtNmYwOTZmZjE3ZDdhXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg",
-    watched: true,
-    score: 5,
+    watched: false,
+    score: 0,
     emmies: 21,
   },
   {
@@ -28,8 +28,8 @@ const series = [
     year: 2007,
     poster:
       "https://pics.filmaffinity.com/Mad_Men_Serie_de_TV-351490728-large.jpg",
-    watched: true,
-    score: 5,
+    watched: false,
+    score: 0,
     emmies: 116,
   },
   {
@@ -38,8 +38,8 @@ const series = [
     creator: "Alan Ball",
     year: 2001,
     poster: "https://www.cine.com/media/series/2711.jpg",
-    watched: true,
-    score: 5,
+    watched: false,
+    score: 0,
     emmies: 53,
   },
   {
